@@ -1,25 +1,38 @@
 <head>
   <title>Comments Board</title>
 </head>
- 
+
 <body>
   <div class="container">
     <header>
       <h1>Comments Board</h1>
 
-      <form class="new-task">
-        <input type="text" name="text" placeholder="I'm thinking that ..." />
-      </form>
+      
     </header>
- 
-    <ul>
-      {{#each tasks}}
+    <!-- <p><form class="new-task"> -->
+    <!--     <input type="text" name="text" placeholder="I'm thinking that ..." /> -->
+    <!-- </Form></p> -->
+
+    <p><form class="form-horizontal new-task" role="form">
+      <div class="form-group col-sm-8">
+    
+        <input type="text" name="text" placeholder="I'm thinking that ..." class="form-control">
+      </div>
+      
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form></p>
+
+    
+    <div class="col-sm-8">
+      <ul class="list-unstyled">
+        {{#each tasks}}
         {{> task}}
-      {{/each}}
-    </ul>
+        {{/each}}
+      </ul>
+    </div>
   </div>
 </body>
- 
+
 <template name="task">
   <li>{{text}}</li>
 </template>
