@@ -1,0 +1,25 @@
+<head>
+  <title>Comments Board</title>
+</head>
+ 
+<body>
+  <div class="container">
+    <header>
+      <h1>Comments Board</h1>
+
+      <form class="new-task">
+        <input type="text" name="text" placeholder="I'm thinking that ..." />
+      </form>
+    </header>
+ 
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+ 
+<template name="task">
+  <li>{{text}}</li>
+</template>
